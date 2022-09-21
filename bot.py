@@ -30,6 +30,7 @@ def main() -> None:
     application.add_handler(CommandHandler("start", commands.start))
     application.add_handler(CommandHandler("help", commands.help))
     application.add_handler(CommandHandler("toss", commands.coin_toss))
+    application.add_handler(CommandHandler("pick", commands.pick))
 
     #application.add_handler(CommandHandler("id", commands.get_id))
 

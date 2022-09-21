@@ -44,3 +44,12 @@ async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         msg = await update.message.reply_sticker(f)
     print(msg.sticker.file_id)
     print(msg.sticker.file_unique_id)
+
+async def pick(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    logging.info("Item Picker requested")
+    command = update.message.text.split(" ")
+    if len(command)>1:
+        await update.message.reply_text(random.choice(list(command[1:])))
+    else:
+        await update.message.reply_text("Dont forget to include options DUH!")
+    logging.info("item picked")
