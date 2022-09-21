@@ -47,9 +47,9 @@ async def get_id(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 async def pick(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     logging.info("Item Picker requested")
-    command = update.message.text.split(" ")
+    command = update.message.text.split()
     if len(command)>1:
-        await update.message.reply_text(random.choice(list(command[1:])))
+        await update.message.reply_text(random.choice(command[1:]))
     else:
         await update.message.reply_text("Dont forget to include options DUH!")
     logging.info("item picked")
